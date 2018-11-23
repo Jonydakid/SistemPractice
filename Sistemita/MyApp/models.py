@@ -5,23 +5,23 @@ reproducirlo en el navegador"""
 """ Create your models here.
 class Album(models.Model):
     id= models.AutoField(primary_key=True)
-    name=models.CharField(max_lenght=50)
+    name=models.CharField(max_length=50)
     descripcion=models.TextField(null=True)
 
 class Banda(models.Model):
     id= models.AutoField()
-    name=models.CharField(max_lenght=50)
+    name=models.CharField(max_length=50)
     Guardado para futuro update.
 """
 class Persona(models.Model):
     id=models.AutoField(primary_key=True)
-    nombre=models.CharField(max_lenght=50)
+    nombre=models.CharField(max_length=50)
     user=models.OneToOneField(User,on_delete=models.CASCADE)
 
 class Cancion(models.Model):
     id= models.AutoField(primary_key=True)
-    name=models.CharField(max_lenght=50)
-    banda=models.CharField(max_lenght=50)
+    name=models.CharField(max_length=50)
+    banda=models.CharField(max_length=50)
     #El index al archivo
     index= models.TextField(max_length=255)
     propietario=models.ForeignKey(Persona, on_delete=models.CASCADE)
