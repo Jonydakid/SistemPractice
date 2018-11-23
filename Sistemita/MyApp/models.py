@@ -15,7 +15,6 @@ class Banda(models.Model):
 """
 class Persona(models.Model):
     id=models.AutoField(primary_key=True)
-    nombre=models.CharField(max_length=50)
     user=models.OneToOneField(User,on_delete=models.CASCADE)
 
 class Cancion(models.Model):
