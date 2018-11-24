@@ -1,16 +1,35 @@
-<!doctype html>
+{% extends "base.html" %}
 
-<html lang="es">
-	<head>
-		
-		 <meta charset="utf-8">
-		 <title>Indice</title>
-		 <meta name="description" content="Pagina"><!--Utilizamos el descriptor en meta para apoyar la busqueda de contenidos en la web-->
-		 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0,maximun-scale=1.0,minimun-scale=1.0"><!--las escalas indican un punto inicial,laescala maxima y minima-->
+{% block title %}My amazing wea{% endblock %}
+
+{% block contenido %}
+	<h1>Sistema de práctica</h1>
+
+	<table>
+			<form method="POST">
+				{% csrf_token %}
+				<table>
+					{% for field in form %}
+					<tr>
+						<th>{{ field.label_tag}}</th>
+					</tr>
+					<tr>
+						<td>{{ field }}</td>
+						<td>{{ field.errors }}</td>
+					</tr>
+					{% endfor %}
+				</table>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input  class="boton" type="submit" value="Ingresar">
+			</form>
+			<!-- espacios en blanco-->
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<h5>¿No tienes cuenta? <a href="{% url 'registro'%}">Registrarse</a></h5>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</table>
 
 
-	</head>
-	<body>
-		<h1>Indice</h1>
-	</body>
-</html>
+{% endblock %}
+
+
+
