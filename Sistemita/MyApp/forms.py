@@ -10,4 +10,4 @@ class addUser(forms.Form):
     email=forms.EmailField(widget=forms.EmailInput(),label="Email")
 
 class addSong(forms.Form):
-    song=forms.FileField()
+    song=forms.FileField(widget=forms.FileInput(),label='Ingrese canción')
